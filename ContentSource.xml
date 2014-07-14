@@ -1,0 +1,113 @@
+<Config>
+	<!-- Search Service Application Name -->
+	<SearchServiceApplicationName>Search Service Application</SearchServiceApplicationName>
+
+	<!-- List of Content Sources -->
+	<ContentSources>
+
+		<!-- Create a ContentSource Entry for each Content Source you want to create -->
+
+		<!-- Name: Name of the Content Source -->
+		<!-- Type: SharePoint - Other types are not supported yet -->
+		<!-- CrawlBehavior: CrawlSites | CrawlVirtualServers - Crawl the SiteCollection or crawl the entire host -->
+		<ContentSource Name="SharePoint 2010 (QA)" Type="SharePoint" CrawlBehavior="CrawlVirtualServers">
+
+			<!-- New line separated urls that should be crawled. Can be either entire hosts or site collections --> 
+			<Urls>
+				http://sharepoint2013
+			</Urls>
+
+			<!-- ScheduleType: Full | Incremental | Continuous - select one of the crawl types -->
+			<!-- Repeat: Monthly | Weekly | Daily - What type of schedule you want to create -->
+
+			<!-- Monthly Parameters: -->
+			<!-- DaysOfMonth: 15 - Day of Month when the crawl should start -->
+			<!-- MonthsOfYear: January,February - Months coma separated -->
+
+			<!-- Weekly Parameters -->
+			<!-- DaysOfWeek: Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday | Everyday | Weekdays - Days coma separated -->
+			<!-- RunEveryInterval: 1 - Run every x weeks -->
+
+			<!-- Daily Parameters -->
+			<!-- StartDateTime: 00:01 - Start time of the crawl -->
+			<!-- RunEveryInterval: 10 - Run every x days -->
+			<!-- RepeatInterval: 30 - Repeat every x minutes -->
+			<!-- RepeatDuration: 1440 - Repeat for how many minutes per day -->
+
+			<CrawlSchedules>
+				<CrawlSchedule Type="Full" Repeat="Weekly" DaysOfWeek="Saturday" StartDateTime="06:00"/>
+				<CrawlSchedule Type="Incremental" Repeat="Daily" StartDateTime="00:01" RunEveryInterval="1" RepeatInterval="30" RepeatDuration="1440" />
+			</CrawlSchedules>
+		</ContentSource>
+
+		<!-- Name: Name of the Content Source -->
+		<!-- Type: SharePoint - Other types are not supported yet -->
+		<!-- CrawlBehavior: CrawlSites | CrawlVirtualServers - Crawl the SiteCollection or crawl the entire host -->
+		<ContentSource Name="SharePoint 2007 (productive)" Type="SharePoint" CrawlBehavior="CrawlSites">
+			<!-- New line separated urls that should be crawled. Can be either entire hosts or site collections --> 
+			<Urls>
+				http://sharepoint2007/sites/test1
+				http://sharepoint2007/sites/test2
+				http://sharepoint2007/sites/test3
+			</Urls>
+
+			<!-- ScheduleType: Full | Incremental | Continuous - select one of the crawl types -->
+			<!-- Repeat: Monthly | Weekly | Daily - What type of schedule you want to create -->
+
+			<!-- Monthly Parameters: -->
+			<!-- DaysOfMonth: 15 - Day of Month when the crawl should start -->
+			<!-- MonthsOfYear: January,February - Months coma separated -->
+
+			<!-- Weekly Parameters -->
+			<!-- DaysOfWeek: Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday | Everyday | Weekdays - Days coma separated -->
+			<!-- RunEveryInterval: 1 - Run every x weeks -->
+
+			<!-- Daily Parameters -->
+			<!-- StartDateTime: 00:01 - Start time of the crawl -->
+			<!-- RunEveryInterval: 10 - Run every x days -->
+			<!-- RepeatInterval: 30 - Repeat every x minutes -->
+			<!-- RepeatDuration: 1440 - Repeat for how many minutes per day -->
+
+			<CrawlSchedules>
+				<CrawlSchedule Type="Full" Repeat="Weekly" DaysOfWeek="Saturday" StartDateTime="10:00"/>
+				<CrawlSchedule Type="Incremental" Repeat="Daily" StartDateTime="00:01" RunEveryInterval="1" RepeatInterval="30" RepeatDuration="1440" />
+			</CrawlSchedules>
+
+		</ContentSource>
+		
+		<!-- Name: Name of the Content Source -->
+		<!-- Type: SharePoint - Other types are not supported yet -->
+		<!-- CrawlBehavior: CrawlSites | CrawlVirtualServers - Crawl the SiteCollection or crawl the entire host -->
+		<ContentSource Name="Fileshare" Type="File" CrawlBehavior="CrawlSites">
+			<!-- New line separated urls that should be crawled. Can be either entire hosts or site collections --> 
+			<Urls>
+				\\filer\folder
+			</Urls>
+
+			<!-- ScheduleType: Full | Incremental | Continuous - select one of the crawl types -->
+			<!-- Repeat: Monthly | Weekly | Daily - What type of schedule you want to create -->
+
+			<!-- Monthly Parameters: -->
+			<!-- DaysOfMonth: 15 - Day of Month when the crawl should start -->
+			<!-- MonthsOfYear: January,February - Months coma separated -->
+
+			<!-- Weekly Parameters -->
+			<!-- DaysOfWeek: Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday | Everyday | Weekdays - Days coma separated -->
+			<!-- RunEveryInterval: 1 - Run every x weeks -->
+
+			<!-- Daily Parameters -->
+			<!-- StartDateTime: 00:01 - Start time of the crawl -->
+			<!-- RunEveryInterval: 10 - Run every x days -->
+			<!-- RepeatInterval: 30 - Repeat every x minutes -->
+			<!-- RepeatDuration: 1440 - Repeat for how many minutes per day -->
+
+			<CrawlSchedules>
+				<CrawlSchedule Type="Full" Repeat="Weekly" DaysOfWeek="Weekdays" StartDateTime="01:00"/>
+				<CrawlSchedule Type="Incremental" Repeat="Daily" StartDateTime="00:01" RunEveryInterval="1" RepeatInterval="90" RepeatDuration="1440" />
+			</CrawlSchedules>
+
+		</ContentSource>
+
+	</ContentSources>
+
+</Config>
